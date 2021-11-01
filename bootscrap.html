@@ -1,0 +1,411 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <!-- main.css -->
+    <link rel="stylesheet" href="main.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <title>Hello, world!</title>
+  </head>
+  <body>
+<script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    
+    <div class="left-menu">
+      <p>Menu Title</p>
+      <button type="button" class="btn btn-danger close-menu">닫기</button>
+    </div>
+    
+
+    <div class="black-background">
+      <div class="white-background">
+        <p > 로그인 하세요. </p>
+        <form action="login.php" class="form">
+          <div class="form-group">
+            <input type="email" class="form-control" placeholder="Email" id="email">
+            <p id="email-is-empty" style="display:none;">이메일 주소를 입력하세요</p>
+            <p id="email-not-proper" style="display:none;">올바른 이메일 형식이 아닙니다</p>
+
+          </div>
+          <div class="form-group">
+            <input type="password" class="form-control" placeholder="Password" id="pw">
+            
+            <p id="pw-is-empty" style="display:none;">비밀번호를 입력하세요</p>
+            <p id="pw-not-proper" style="display:none;">올바른 비밀번호 형식이 아닙니다</p>
+          </div>
+          <button type="submit" class="btn btn-primary">전송</button>
+          <button type="button" class="btn btn-danger close-modal">닫기</button>
+        </form>               
+        
+      </div>
+    </div>
+
+    <!-- 이벤트 버블링 -->
+
+  <!-- 어떤 HTML 태그에 이벤트가 발생하면 그의 모든 상위요소까지 이벤트가 실행되는 현상입니다. 
+
+      클릭이라는 이벤트로 예를 들어보면, HTML 태그에 클릭이 발생하면 그의 모든 상위요소까지 자동으로 클릭된다는 말입니다. 
+
+      <div>
+        <div>
+          <p>안녕</p>
+        </div>
+      </div>
+      ▲위의 코드에서 p태그 안녕이라는 글자를 클릭하면 브라우저는 사용자가 클릭을 총 3번 했다고 인지합니다.  p랑 그 위의 div랑 그 위의 div랑 이렇게요. 이게 이벤트 버블링인데 브라우저는 이벤트 버블링이 항상 일어나도록 코드가 짜여있습니다. 그냥 자연스러운 현상입니다. -->
+    <script>
+      $('.black-background').click(function(e) {
+        //e.target; 지금 실제로 클릭한 요소
+        //e.currentTarget;  지금 이벤트 리스너가 달린 곳 = $(this)
+        //e.preventDefault(); 기본동작 막기
+        console.log(e.target); //Javascript 문법으로 찾은거
+        console.log($('.black-background')); //Jquery 문법으로 찾은 것
+        
+        if(e.target == this) {//만약에 지금 실제로 클릭한게 검은배경일 때만
+          $('.black-background').removeClass('slide-down'); //이벤트 버블링: input을 누른 경우, 브라우저는 input, white-background, black-background도 눌렀다고 생각하고 black-background를 닫아버림
+      }
+      })
+    </script>
+
+    <div class="nav-menu">
+      <h4 style="margin: 0" class="large-logo">Shirts Studio</h4> 
+      <a id="products">Products</a>
+    </div>
+
+    
+      <ul class="list-group nav-sub" style="padding-top:50px">
+        <li class="list-group-item">Outer</li>
+        <li class="list-group-item">Innerwear</li>
+        <li class="list-group-item">Shirts</li>
+      </ul>
+    
+
+    <script>
+
+      //scroll 이벤트는 1초에 60번 수행하므로 여러개 만들면 사이트가 느려진다
+      //하나 만들어서 그 안에 다 때려박아라
+      $(window).scroll( function() {  //window = viewport = 화면 전체
+        
+        if($( window ).scrollTop() > 100) {
+          $('.nav-menu').addClass('nav-black');
+          $('.nav-menu h4').addClass('small-logo');        
+        }  else {
+          $('.nav-menu').removeClass('nav-black');
+          $('.nav-menu h4').removeClass('small-logo');
+        
+        }
+       
+
+      })
+    </script>
+
+    <div class="jumbotron main-background">
+        <h1 class="display-4">Hello, world!</h1>
+        <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+        <hr class="my-4">
+        <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+        <a id="login" class="btn btn-primary btn-lg" role="button">Log In</a>
+        <a id="show-menu" class="btn btn-danger btn-lg" role="button">Show Menu</a>
+      </div>
+
+      <h4 class="my-4 text-center">Showcase</h4>
+      <div style="overflow:hidden; position:relative;"> <!--position absolute를 썼을 때 상윗단에 position relative를 써야 잘 동작한다.-->
+        <div class="slide-container">
+          
+          <div class="slide-box">
+            <img src="1.jpg">            
+          </div>
+          <div class="slide-box">
+            <img src="2.jpg">
+          </div>
+          <div class="slide-box">
+            <img src="3.jpg">
+          </div>      
+        </div>
+        <button class="next-button" >></button>
+        <button class="before-button"><</button>
+      </div>
+
+     
+      <!-- <button class="slide-1">1</button>
+      <button class="slide-2">2</button>
+      <button class="slide-3">3</button> -->
+
+     
+
+      <div class="my-5"></div>
+
+      
+
+    <script>
+
+      var 지금보이는사진 = 1;
+      var 비포어;
+      
+      $('.next-button').click(function() {      
+           
+            
+            if(지금보이는사진 < $('.slide-container div').length){
+              $('.slide-container').css('transform', 'translateX(-' + 지금보이는사진 + '00vw)');
+              지금보이는사진 = 지금보이는사진+1;   
+            }     
+      });
+      
+      $('.before-button').click(function() {      
+            //지금보이는 사진 2
+                       
+            if(지금보이는사진 > 1){
+              $('.slide-container').css('transform', 'translateX(-' + (지금보이는사진-2) + '00vw)');
+              지금보이는사진 = 지금보이는사진-1;   
+            }   
+              
+      });
+      //matrix(1, 0, 0, 1, -866, 0)
+      //matrix(1, 0, 0, 1, -1732, 0)
+      //  s
+      // $('.slide-1').click(function() {
+      //   $('.slide-container').css('transform', 'translateX(0vw)');
+      // });
+      // $('.slide-2').click(function() {
+      //   $('.slide-container').css('transform', 'translateX(-100vw)');
+      // });
+      // $('.slide-3').click(function() {
+      //   $('.slide-container').css('transform', 'translateX(-200vw)');
+      // });
+
+
+    </script>
+
+    <!-- <input id="test-input" value="안녕"> -->
+
+    <style>
+      ul.list {
+      list-style-type: none;
+      margin: 0;
+      padding: 0;
+      border-bottom: 1px solid #ccc;
+      }
+      ul.list::after {
+      content: '';
+      display: block;
+      clear: both;
+      }
+      .tab-button {
+      display: block;
+      padding: 10px 20px 10px 20px;
+      float: left;
+      margin-right: -1px;
+      margin-bottom: -1px;
+      color: grey;
+      text-decoration: none;
+      cursor: pointer;
+      }
+      .active {
+      border-top: 2px solid orange;
+      border-right: 1px solid #ccc;
+      border-bottom: 1px solid white;
+      border-left: 1px solid #ccc;
+      color: black;
+      margin-top: -2px;
+      }
+      .tab-content {
+      display: none;
+      padding: 10px;
+      }
+      .show {
+      display: block;
+      }
+    </style>
+    
+    
+    <div class="container mt-5">
+      <ul class="list">
+        <li class="tab-button" data-id="0">Products</li>
+        <li class="tab-button active" data-id="1">Information</li>
+        <li class="tab-button" data-id="2">Shipping</li>
+      </ul>
+
+    
+      <div class="tab-content">
+        <p>상품설명입니다. Product</p>
+      </div>
+      <div class="tab-content show">
+        <p>상품정보입니다. Info</p>
+      </div>
+      <div class="tab-content">
+        <p>배송정보입니다. Shipping</p>
+      </div>
+    </div>
+
+    <script src="tab.js"></script>
+
+    <script>
+      
+      $('#show-menu').click(function() {
+        $('.left-menu').animate({marginLeft: '0px'})
+      })
+
+      $('.close-menu').click(function() {
+         $('.left-menu').animate({marginLeft: '-150px'});
+        })
+
+    
+
+      $('#login').on('click', function() {        
+        //var value = $('#test-input').val();
+        // if( value == "안녕"){    
+         
+         //$('.black-background').animate({ marginTop : '0px' }); 옛날방식
+      
+        // } 
+        // $('.black-background').css('transform', 'translateY(0px)' );
+        $('.black-background').addClass('slide-down' );
+
+      })
+
+      $('.close-modal').click(function() {
+         $('.black-background').removeClass('slide-down');
+        })
+
+        
+
+      $('#products').on('click', function(){
+        
+        $('.nav-sub').slideToggle(function() {
+          if($('.nav-menu').css("color") == 'rgb(255, 255, 255)')   
+            $('.nav-menu').css("color", "black");
+          else
+            $('.nav-menu').css("color", "white");
+          
+        });      
+        
+      });  
+      
+      
+
+      $('.form').on('submit', function(e){
+        
+       //--    /정규식/    --//문자를 검사하고 싶을 때 "지금 어떤 문자에 abc라는 글자가 있나요?"
+       //       /abc/.test('abcdefg') //email regular expression
+        //    /[A-z]/.test('s')  대문자 A부터 소문자 Z까지
+        //    /\S/.test('#')      특수문자 포함 모든 문자
+        //    /\S@/.test('t@')  모든 문자 1개 다음에 골뱅이가 오냐 안오냐
+        //    /\S+@\S+\.\S+/.test('tfgd@gfdg.gfdg')  모든 문자 다음에 골뱅이가 오냐 안오냐
+        var emailInput = $('#email').val();
+        var pwInput = $('#pw').val();
+        
+        if(!emailInput) {
+          e.preventDefault();
+          $('#email-is-empty').show();
+        } else if(/^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/.test(emailInput) == false) {
+         
+           e.preventDefault();
+           $('#email-not-proper').show();
+        } 
+        
+        if(!pwInput) {
+          e.preventDefault();
+          $('#pw-is-empty').show();
+        }
+        else if(/[A-Z]/.test(pwInput) == false) {
+          e.preventDefault();
+          $('#pw-not-proper').show();
+        }
+        // if(!($('#email').val())) {
+        //   e.preventDefault();
+        //   $('#email-is-empty').show();
+        // } 
+        
+        // if(!($('#pw').val())) {
+        //   e.preventDefault();
+        //   $('#pw-is-empty').show();
+        // }
+        
+       })
+
+      //  $('#email').on('change', function() { // 값 바꾸고 포커스를 잃을 때
+
+      //  })
+       $('#email').on('input', function() {  //값 입력하자마자 
+        $('#email-is-empty').hide();
+        $('#email-not-proper').hide();
+
+       })
+       $('#pw').on('input', function() {  //값 입력하자마자 
+        $('#pw-is-empty').hide();
+        $('#pw-not-proper').hide();
+
+       })
+
+      //  function 삼육구게임(e){
+      //    //수를 넣을 때
+      //    //3의 배수이면
+      //    if(e % 9 == 0)  {
+      //    //박수를 친다 = 콘솔창에 '박수'
+          
+      //       console.log('박수x2');
+            
+      //    } else if(e % 3 == 0){
+      //       console.log('박수');  
+          
+      //    } else {
+      //    //3의 배수가 아니면
+      //    //통과한다 = 콘솔창에 '통과'
+      //    console.log('통과');
+      //    }
+      //  }
+      //  삼육구게임(6);
+      //  삼육구게임(11);
+      //  삼육구게임(18);
+     
+      //  //var 나이 = 20;
+      //  //var 나이; //재선언 쌉가능 //범위: function (function 안에서 살고 죽음)
+
+      //  //자선언이 불가능한 변수
+      //  //범위 중괄호 {} (if라면 if문 안에서만) => 변수 이름이 겹쳐도 상관 x 
+      //   //let 나이 = 20;
+
+      //  //재선언 불가능
+      //  //재할당 불가능한 변수 => 프론트 환경에선 잘 안쓰고, 서버에서만 씀
+      //  //범위 중괄호 {} (if라면 if문 안에서만) => 변수 이름이 겹쳐도 상관 x 
+      //  //const 나이 = 20;
+      //  //
+       
+      //  var 예금액 = 60000;
+      //  var 미래금액 = 0;
+      //  var 년수 = 2;
+       
+      //  function 이자계산(이자율) {
+      //   var temp = 예금액
+      //   for(let i=0;i<년수;i++) {          
+      //     temp = temp * ( 1 + 이자율 );                    
+      //    }
+      //    미래예금액 = temp;        
+      //  }
+
+      //  if (예금액 < 50000) {
+      //    let 이자율 = 0.15;
+      //    이자계산(이자율);
+         
+      //  } else {
+      //   let 이자율 = 0.20;
+      //    이자계산(이자율);
+      //  }      
+      
+       
+      //  console.log(미래예금액);
+
+
+    </script>  
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+  </body>
+</html>
+
