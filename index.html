@@ -13,6 +13,7 @@
         <!-- Google fonts-->
         <link href="https://fonts.googleapis.com/css?family=Montserrat:400,700" rel="stylesheet" type="text/css" />
         <link href="https://fonts.googleapis.com/css?family=Lato:400,700,400italic,700italic" rel="stylesheet" type="text/css" />
+        <link href="https://fonts.googleapis.com/css2?family=Great+Vibes&display=swap" rel="stylesheet" type="text/css">
         <!-- Core theme CSS (includes Bootstrap)-->
         <link href="css/styles.css" rel="stylesheet" />
     </head>
@@ -20,15 +21,15 @@
         <!-- Navigation-->
         <nav class="navbar navbar-expand-lg bg-secondary text-uppercase fixed-top" id="mainNav">
             <div class="container">
-                <a class="navbar-brand" href="#page-top">Start Bootstrap</a>
+                <a class="navbar-brand" href="#page-top">J Y</a>
                 <button class="navbar-toggler text-uppercase font-weight-bold bg-primary text-white rounded" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
                     Menu
                     <i class="fas fa-bars"></i>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarResponsive">
                     <ul class="navbar-nav ms-auto">
-                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#about">About</a></li>
+                        <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#portfolio">Portfolio</a></li>                        
                         <li class="nav-item mx-0 mx-lg-1"><a class="nav-link py-3 px-0 px-lg-3 rounded" href="#contact">Contact</a></li>
                     </ul>
                 </div>
@@ -36,28 +37,101 @@
         </nav>
         <!-- Masthead-->
         <header class="masthead bg-primary text-white text-center">
-            <div class="container d-flex align-items-center flex-column">
+            <div class="container d-flex flex-row">
+                <div class="flex-column masthead-left">
+                    <!-- Masthead Heading-->
+                    <br> <h1 class="masthead-heading mb-0 my-name" >Hello, I'm Ju Yeun</h1>
+                    <!-- Icon Divider-->
+                    <div class="divider-custom divider-light star-line" >
+                        <br><div class="divider-custom-line"></div>
+                        <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
+                        <div class="divider-custom-line"></div><br>
+                    </div>
+                    <!-- Masthead Subheading-->
+                    <p class="masthead-subheading font-weight-light mb-0 introduction" >An Imaging IT Specialist in Radiology Department<br>currently residing in Singapore</p>
+                </div>
                 <!-- Masthead Avatar Image-->
-                <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." />
-                <!-- Masthead Heading-->
-                <h1 class="masthead-heading text-uppercase mb-0">Start Bootstrap</h1>
+                <div class="masthead-right">
+                    <img class="masthead-avatar mb-5" src="assets/img/avataaars.svg" alt="..." /><br>
+                   
+                    <a href="#!" class="c-button c-button--gooey"> CONTACT ME
+                        
+                        <div class="c-button__blobs">
+                          <div></div>
+                          <div></div>
+                          <div></div>
+                        </div>
+                    </a>                      
+                </div>
+                <!-- Masthead Contact Me Button-->
+                
+            </div>
+        </header>
+
+        <!-- About Section-->
+        <section class="page-section bg-secondary  mb-0" id="about">
+            <div class="container">
+                <!-- About Section Heading-->
+                <h2 class="page-section-heading text-center text-uppercase text-secondary">About</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
+                <div class="divider-custom">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
                 </div>
-                <!-- Masthead Subheading-->
-                <p class="masthead-subheading font-weight-light mb-0">Graphic Artist - Web Designer - Illustrator</p>
+                <!-- About Section Content-->
+                <div class="row">
+                    <div class=""><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
+                    <!-- <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div> -->
+                </div><br>
+
+                <div class="row justify-content-center" >
+                    <!-- Portfolio Item 1-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal1">
+                            <img class="portfolio-img w-50"  src="assets/img/aboutme/patientportal-icon.png" alt="..." />
+                            <br><div class="text-center h3">Patient Portal</div>
+                            <div class="text-center ">Patient Image Portal, PACS, SRIS</div>
+                            
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 2-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal2">
+                            <img class="portfolio-img w-50" src="assets/img/aboutme/html-icon.png" alt="..." />
+                            <br><div class="text-center h3">Front-end</div>
+                            <div class="text-center ">HTML, CSS, JavaScript</div>
+                        </div>
+                    </div>
+                    <!-- Portfolio Item 3-->
+                    <div class="col-md-6 col-lg-4 mb-5">
+                        <div class="portfolio-item mx-auto" data-bs-toggle="modal" data-bs-target="#portfolioModal3">
+                            <img class="portfolio-img w-50" src="assets/img/aboutme/nodejs-icon.jpg" alt="..." />
+                            <br><div class="text-center h3">Back-end</div>
+                            <div class="text-center ">NodeJS, MongoDB</div>
+                        </div>
+                    </div>
+
+                    
+                </div>
+
+
+                <!-- About Section Button-->
+                <div class="text-center mt-4">
+                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
+                        <i class="fas fa-download me-2"></i>
+                        Free Download!
+                    </a>
+                </div>
             </div>
-        </header>
+        </section>
         <!-- Portfolio Section-->
-        <section class="page-section portfolio" id="portfolio">
+        <section class="page-section bg-primary portfolio" id="portfolio">
             <div class="container">
                 <!-- Portfolio Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-secondary mb-0">Portfolio</h2>
+                <h2 class="page-section-heading text-center text-uppercase text-white mb-0">Portfolio</h2>
                 <!-- Icon Divider-->
-                <div class="divider-custom">
+                <div class="divider-custom divider-light ">
                     <div class="divider-custom-line"></div>
                     <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
                     <div class="divider-custom-line"></div>
@@ -121,31 +195,7 @@
                 </div>
             </div>
         </section>
-        <!-- About Section-->
-        <section class="page-section bg-primary text-white mb-0" id="about">
-            <div class="container">
-                <!-- About Section Heading-->
-                <h2 class="page-section-heading text-center text-uppercase text-white">About</h2>
-                <!-- Icon Divider-->
-                <div class="divider-custom divider-light">
-                    <div class="divider-custom-line"></div>
-                    <div class="divider-custom-icon"><i class="fas fa-star"></i></div>
-                    <div class="divider-custom-line"></div>
-                </div>
-                <!-- About Section Content-->
-                <div class="row">
-                    <div class="col-lg-4 ms-auto"><p class="lead">Freelancer is a free bootstrap theme created by Start Bootstrap. The download includes the complete source files including HTML, CSS, and JavaScript as well as optional SASS stylesheets for easy customization.</p></div>
-                    <div class="col-lg-4 me-auto"><p class="lead">You can create your own custom avatar for the masthead, change the icon in the dividers, and add your email address to the contact form to make it fully functional!</p></div>
-                </div>
-                <!-- About Section Button-->
-                <div class="text-center mt-4">
-                    <a class="btn btn-xl btn-outline-light" href="https://startbootstrap.com/theme/freelancer/">
-                        <i class="fas fa-download me-2"></i>
-                        Free Download!
-                    </a>
-                </div>
-            </div>
-        </section>
+        
         <!-- Contact Section-->
         <section class="page-section" id="contact">
             <div class="container">

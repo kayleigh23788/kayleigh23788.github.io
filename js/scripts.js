@@ -9,6 +9,12 @@
 
 window.addEventListener('DOMContentLoaded', event => {
 
+    // Slide action for mainNav
+    document.getElementsByClassName("masthead-right")[0].classList.add("masthead-slideX");
+    document.getElementsByClassName("star-line")[0].classList.add("masthead-slideX");
+    document.getElementsByClassName("my-name")[0].classList.add("masthead-slideY");
+    document.getElementsByClassName("introduction")[0].classList.add("masthead-slideY");
+
     // Navbar shrink function
     var navbarShrink = function () {
         const navbarCollapsible = document.body.querySelector('#mainNav');
