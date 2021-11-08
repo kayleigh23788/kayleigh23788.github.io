@@ -11583,12 +11583,28 @@ html {
   display: block;  
   margin-left: auto;  
   margin-right: auto;
-  transition: transform .7s ease-in-out;
-}
-.portfolio-item .portfolio-img:hover{
-  transform: rotate(360deg);
+  animation-name: portfolio-img;
+  animation-duration: 2.5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  
 }
 
+.portfolio-item .portfolio-img-center{
+
+  animation-duration: 2.2s;
+
+  
+}
+/* .portfolio-item .portfolio-img:hover{
+  transform: rotate(360deg);
+} */
+
+@keyframes portfolio-img {
+  from { transform: translate(0,  0px); }
+  65%  { transform: translate(0, 15px); }
+  to   { transform: translate(0, -0px); }    
+}
 .portfolio .portfolio-item {
   cursor: pointer;
   position: relative;
