@@ -6186,9 +6186,10 @@ textarea.form-control-lg {
   bottom: 1.25rem;
   left: 15%;
   padding-top: 1.25rem;
-  padding-bottom: 1.25rem;
+  padding-bottom: 3rem;
   color: #fff;
   text-align: center;
+  text-transform: uppercase;
 }
 
 .carousel-dark .carousel-control-prev-icon,
@@ -11510,6 +11511,21 @@ html {
   vertical-align: middle;
 }
 
+.cc-button {
+  color: white;
+  background-color: #06c8d9;
+  border-radius: 30px;
+  font-weight: 700;
+  font-size: 1em;
+  text-decoration: none;
+  padding: .7em 1.8em;
+  cursor: pointer;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+}
+
+
 .c-button--gooey {
   color: #06c8d9;
   font-size: 1.3em;
@@ -11672,3 +11688,4 @@ html {
   display: inline-block;  
   border:3px solid grey; 
 }
+
