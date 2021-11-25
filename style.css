@@ -1,0 +1,152 @@
+body {
+    background-image: linear-gradient(to right, #50ffd8 , #ff80a2);
+    height: 100vh;
+}
+
+.container {
+    margin: 0px auto;
+    top: 150px;
+    width: 450px;
+    perspective: 900px;
+    position: relative;
+}
+
+#frames {
+    width: 44px;
+    transform-style: preserve-3d;
+    transform: rotateX(0deg) rotateY(0deg) rotateZ(0deg) translate3d(230px, 0px, 0px);
+}
+
+.strip {
+    transform-style: preserve-3d;
+    animation: spin 20s infinite linear;
+}
+
+.strip div {
+    position: absolute;
+    background: url(assets/img/carousel/5.jpeg);
+    /* border: solid rgb(145, 87, 0); */
+    /* border-width: thin 0; */
+    height: 320px;
+    width: 106px;
+    opacity: 1;
+}
+
+.strip div:after {
+    content: '';
+    position: absolute;
+    width: 66px;
+    bottom: -40px;
+    box-shadow: 0px 20px 40px 10px rgba(0,0,0,3);
+}
+
+.strip .s {
+    background-position: 2544px;
+    transform: rotateY(0deg) translateZ(400px)
+}
+.strip .s1 {
+    background-position: 2437px;
+    transform: rotateY(15deg) translateZ(400px)
+}
+.strip .s2 {
+    background-position: 2330px;
+    transform: rotateY(30deg) translateZ(400px)
+}
+.strip .s3 {
+    background-position: 2223px;
+    transform: rotateY(45deg) translateZ(400px)
+}
+.strip .s4 {
+    background-position: 2116px;
+    transform: rotateY(60deg) translateZ(400px)
+}
+.strip .s5 {
+    background-position: 2009px;
+    transform: rotateY(75deg) translateZ(400px)
+}
+.strip .s6 {
+    background-position: 595px;
+    transform: rotateY(90deg) translateZ(400px)
+}
+.strip .s7 {
+    background-position: 542px;
+    transform: rotateY(105deg) translateZ(400px)
+}
+.strip .s8 {
+    background-position: 490px;
+    transform: rotateY(120deg) translateZ(400px)
+}
+.strip .s9 {
+    background-position: 437px;
+    transform: rotateY(135deg) translateZ(400px)
+}
+.strip .s10 {
+    background-position: 384px;
+    transform: rotateY(150deg) translateZ(400px)
+}
+.strip .s11 {
+    background-position: 331px;
+    transform: rotateY(165deg) translateZ(400px)
+}
+.strip .s12 {
+    background-position: 278px;
+    transform: rotateY(180deg) translateZ(400px)
+}
+.strip .s13 {
+    background-position: 225px;
+    transform: rotateY(195deg) translateZ(400px)
+}
+.strip .s14 {
+    background-position: 172px;
+    transform: rotateY(210deg) translateZ(400px)
+}
+.strip .s15 {
+    background-position: 119px;
+    transform: rotateY(225deg) translateZ(400px)
+}
+.strip .s16 {
+    background-position: 66px;
+    transform: rotateY(240deg) translateZ(400px)
+}
+.strip .s17 {
+    background-position: 13px;
+    transform: rotateY(255deg) translateZ(400px)
+}
+.strip .s18 {
+    background-position: -40px;
+    transform: rotateY(270deg) translateZ(400px)
+}
+.strip .s19 {
+    background-position: -93px;
+    transform: rotateY(285deg) translateZ(400px)
+}
+.strip .s20 {
+    background-position: -146px;
+    transform: rotateY(300deg) translateZ(400px)
+}
+.strip .s21 {
+    background-position: -199px;
+    transform: rotateY(315deg) translateZ(400px)
+}
+.strip .s22 {
+    background-position: -252px;
+    transform: rotateY(330deg) translateZ(400px)
+}
+.strip .s23 {
+    background-position: -305px;
+    transform: rotateY(345deg) translateZ(400px)
+}
+/* .strip .s24 {
+    background-position: 913px;
+    transform: rotateY(360deg) translateZ(200px)
+} */
+
+
+@keyframes spin { 
+    from {
+        transform: rotateY(0deg);
+    }
+    to {
+        transform: rotateY(-360deg);
+    }
+}

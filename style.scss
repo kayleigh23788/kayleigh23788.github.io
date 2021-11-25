@@ -1,0 +1,19 @@
+.carousel {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+     > * {
+       flex: 0 0 auto;
+    }
+  
+    .figure {
+      width: $item-width;
+      transform-style: preserve-3d;
+      img {
+        width: 100%;
+        &:not(:first-of-type) {
+          display: none /* Just for now */
+        }
+      }
+    }
+  }
