@@ -3,6 +3,7 @@ body {
     /* font-family: Arial, Helvetica, sans-serif; */
     font-family: 'Montserrat', sans-serif;
     
+    
   }
 
 
@@ -71,6 +72,7 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
+    overflow: hidden;
     
     
 }
@@ -82,6 +84,7 @@ body {
     top: 0;
     width: 100%;
     height: 700px;
+
   }
 
 
@@ -116,57 +119,83 @@ body {
 
 
 /* About */
-.about{
-    height: 600px;
-    background-color: thistle;
+.about {
+    position: relative;
+    z-index: 1;
+}
+.about:before{
+    content: "";
+    position: absolute;
+    top: 0;
+    left:0;
+    width:100%;
+    height: 1200px;
+    background: url(../assets/img/background/background-marble3.jpg);
+    background-repeat: repeat;
+  background-size: 100%;
+  opacity: 0.6;
+  z-index: -1;
+  
+    
 }
 
 
-.about ul.list{
-    list-style-type:none;
+.about .title {
+  
+    
+}
+
+.about .title h5 {
     margin: 0;
-    padding: 0;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.about .description {
+    display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 600px;
+  
+  background: thistle ;
+}
+
+.about .description .progress-2 {
+    height: 2px !important;
+}
+
+
+/* Scroller styling */
+.scroller {
+    height: 1.2em;
+    line-height: 1.2em;
+    position: relative;
+    overflow: hidden;
+    width: 10em;
+  }
+  .scroller > span {
+    position: absolute;
+    top: 0;
+    animation: slide 6s infinite;
+    font-weight: bold;
     
-    
-
-}
-.about ul.list::after{
-    content: '';
-    display: block;
-    clear: both;
-    
-
-}
-
-.about .tab-button{
-    display: block;
-    padding: 0px 20px 5px 0px;
-    float: left;
-
-    color: rgb(97, 97, 97);
-    text-decoration: none;
-    cursor: pointer;
-    font-size: small;
-    
-    
-}
-
-.about .active a{
-   
-   border-bottom: 1px solid rgb(222,227,233);
-
-}
-
-.about .tab-content {
-    display: none;
-    padding-top: 20px;
-    color: rgb(97, 97, 97);
-}
-
-
-.about .show {
-    display: block;
-}
+  }
+  @keyframes slide {
+    0% {
+      top: 0;
+    }
+    25% {
+      top: -1.2em;
+    }
+    50% {
+      top: -2.4em;
+    }
+    75% {
+      top: -3.6em;
+    }
+  }
 
 /* Skills */
 
@@ -253,4 +282,11 @@ body {
 
 .font-gray {
     color: rgb(97, 97, 97);
+}
+
+
+/*** Color ***/
+
+.background-pink {
+    background-color: rgb(241, 226, 232) !important;
 }
